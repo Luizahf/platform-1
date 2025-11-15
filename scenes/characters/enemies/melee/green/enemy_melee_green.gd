@@ -9,9 +9,10 @@ const JUMP_VELOCITY = -400.0
 func _ready():
 	if attack.has_method("_on_atack"):
 		attack._on_atack()
-	move_and_slide()
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	pass
+
+
+func _on_sword_attack_hit(body: Variant) -> void:
+	pass # Replace with function body.
