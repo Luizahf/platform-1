@@ -2,14 +2,12 @@
 
 [ext_resource type="Script" uid="uid://brpjsuef2t0ux" path="res://scenes/main/game_state.gd" id="1_hyk8p"]
 [ext_resource type="PackedScene" uid="uid://cmofqtb5vhlpk" path="res://scenes/player/Player.tscn" id="1_k2fmo"]
-[ext_resource type="PackedScene" uid="uid://dbqlrfacg3wr6" path="res://scenes/level1/level_1.tscn" id="3_l3cfh"]
+[ext_resource type="Script" uid="uid://car4vm00sn2nm" path="res://scenes/main/main.gd" id="1_l3cfh"]
 
 [node name="Main" type="Node2D"]
-
-[node name="Player" parent="." instance=ExtResource("1_k2fmo")]
-position = Vector2(93, 547)
+script = ExtResource("1_l3cfh")
 
 [node name="GameState" type="Node" parent="."]
 script = ExtResource("1_hyk8p")
 
-[node name="Level 1" parent="." instance=ExtResource("3_l3cfh")]
+[node name="Player" parent="." instance=ExtResource("1_k2fmo")]

@@ -1,0 +1,207 @@
+[gd_scene load_steps=10 format=4 uid="uid://dnaiqbp0yjs7"]
+
+[ext_resource type="Texture2D" uid="uid://bf5srs8u10dpo" path="res://assets/kenney_scribble-platformer/Spritesheet/spritesheet_default.png" id="1_6qhov"]
+[ext_resource type="Script" uid="uid://b5tv3ag52tgd8" path="res://scenes/maps/level_2.gd" id="1_74t05"]
+[ext_resource type="Texture2D" uid="uid://bjdhuk0lslhxo" path="res://assets/kenney_scribble-platformer/Spritesheet/spritesheet_win.png" id="2_74t05"]
+[ext_resource type="Script" uid="uid://c8ppb3d1ska6v" path="res://scenes/maps/death_zone.gd" id="3_dm4dq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tgohi"]
+texture = ExtResource("1_6qhov")
+texture_region_size = Vector2i(64, 64)
+10:10/0 = 0
+9:10/0 = 0
+8:10/0 = 0
+7:10/0 = 0
+6:10/0 = 0
+5:10/0 = 0
+4:10/0 = 0
+3:10/0 = 0
+2:10/0 = 0
+1:10/0 = 0
+0:10/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+10:8/0 = 0
+9:8/0 = 0
+8:8/0 = 0
+7:8/0 = 0
+6:8/0 = 0
+5:8/0 = 0
+4:8/0 = 0
+3:8/0 = 0
+2:8/0 = 0
+1:8/0 = 0
+0:8/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+4:7/0/terrain_set = 0
+4:7/0/terrain = 0
+4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+10:6/0 = 0
+9:6/0 = 0
+8:6/0 = 0
+7:6/0 = 0
+6:6/0 = 0
+5:6/0 = 0
+4:6/0 = 0
+3:6/0 = 0
+2:6/0 = 0
+1:6/0 = 0
+0:6/0 = 0
+0:5/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+10:5/0 = 0
+9:5/0 = 0
+8:5/0 = 0
+7:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+5:5/0/terrain_set = 0
+5:5/0/terrain = 0
+5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+5:5/0/terrains_peering_bit/right_side = 0
+5:5/0/terrains_peering_bit/bottom_right_corner = 0
+5:5/0/terrains_peering_bit/bottom_side = 0
+5:5/0/terrains_peering_bit/bottom_left_corner = 0
+5:5/0/terrains_peering_bit/left_side = 0
+5:5/0/terrains_peering_bit/top_left_corner = 0
+5:5/0/terrains_peering_bit/top_side = 0
+5:5/0/terrains_peering_bit/top_right_corner = 0
+6:5/0 = 0
+10:3/0 = 0
+9:3/0 = 0
+8:3/0 = 0
+7:3/0 = 0
+6:3/0 = 0
+5:3/0 = 0
+4:3/0 = 0
+3:3/0 = 0
+2:3/0 = 0
+1:3/0 = 0
+0:3/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+3:0/0 = 0
+2:0/0 = 0
+1:0/0 = 0
+0:0/0 = 0
+10:1/0 = 0
+9:1/0 = 0
+8:1/0 = 0
+7:1/0 = 0
+6:1/0 = 0
+5:1/0 = 0
+4:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_swmay"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Wall"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+sources/1 = SubResource("TileSetAtlasSource_tgohi")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gcjdc"]
+texture = ExtResource("2_74t05")
+texture_region_size = Vector2i(64, 64)
+3:7/0 = 0
+3:7/0/terrain_set = 0
+3:7/0/terrain = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+3:7/0/terrains_peering_bit/right_side = 0
+3:7/0/terrains_peering_bit/bottom_right_corner = 0
+3:7/0/terrains_peering_bit/bottom_side = 0
+3:7/0/terrains_peering_bit/bottom_left_corner = 0
+3:7/0/terrains_peering_bit/left_side = 0
+3:7/0/terrains_peering_bit/top_left_corner = 0
+3:7/0/terrains_peering_bit/top_side = 0
+3:7/0/terrains_peering_bit/top_right_corner = 0
+
+[sub_resource type="TileSet" id="TileSet_vqo3x"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 4
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Win"
+terrain_set_0/terrain_0/color = Color(0.14594036, 0.45752442, 0.20723304, 1)
+sources/1 = SubResource("TileSetAtlasSource_gcjdc")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kaamm"]
+size = Vector2(900.5, 57)
+
+[node name="Level2" type="Node2D"]
+script = ExtResource("1_74t05")
+
+[node name="Walls" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAkAAQAFAAUAAAAAAAgAAQAFAAUAAAAAAAcAAQAFAAUAAAAAAAYAAQAFAAUAAAAAAAUAAQAFAAUAAAAAAAQAAQAFAAUAAAAAAAEAAQAFAAUAAAAAAAMAAQAFAAUAAAAAAAIAAQAFAAUAAAAAAAAAAQAFAAUAAAABAAAAAQAFAAUAAAACAAAAAQAFAAUAAAADAAAAAQAFAAUAAAAEAAAAAQAFAAUAAAAFAAAAAQAFAAUAAAAGAAAAAQAFAAUAAAAHAAAAAQAFAAUAAAAIAAAAAQAFAAUAAAAJAAAAAQAFAAUAAAAKAAAAAQAFAAUAAAALAAAAAQAFAAUAAAAMAAAAAQAFAAUAAAANAAAAAQAFAAUAAAAOAAAAAQAFAAUAAAAPAAAAAQAFAAUAAAAQAAAAAQAFAAUAAAARAAAAAQAFAAUAAAARAAEAAQAFAAUAAAARAAIAAQAFAAUAAAARAAMAAQAFAAUAAAARAAQAAQAFAAUAAAARAAUAAQAFAAUAAAARAAYAAQAFAAUAAAARAAcAAQAFAAUAAAARAAgAAQAFAAUAAAARAAkAAQAFAAUAAAABAAkAAQAEAAcAAAACAAkAAQAEAAcAAAAEAAgAAQAEAAcAAAAFAAgAAQAEAAcAAAABAAYAAQAEAAcAAAACAAYAAQAEAAcAAAAEAAUAAQAEAAcAAAAFAAUAAQAEAAcAAAAIAAkAAQAFAAUAAAAIAAgAAQAFAAUAAAAIAAcAAQAFAAUAAAAIAAYAAQAFAAUAAAAIAAUAAQAFAAUAAAAIAAQAAQAFAAUAAAAIAAMAAQAFAAUAAAAJAAMAAQAFAAUAAAAKAAMAAQAFAAUAAAALAAMAAQAFAAUAAAAMAAMAAQAFAAUAAAAKAAcAAQADAAcAAAALAAcAAQADAAcAAAANAAMAAQAFAAUAAAANAAQAAQAFAAUAAAANAAUAAQAFAAUAAAAGAAMAAQAEAAcAAAAPAAcAAQAEAAcAAAAQAAcAAQAEAAcAAAANAAgAAQAEAAcAAAA=")
+tile_set = SubResource("TileSet_swmay")
+
+[node name="Win" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAKAAcAAQADAAcAAAALAAcAAQADAAcAAAA=")
+tile_set = SubResource("TileSet_vqo3x")
+
+[node name="DeathZone" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_dm4dq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(640.75, 610.5)
+shape = SubResource("RectangleShape2D_kaamm")
+debug_color = Color(0.9550522, 0.18115309, 0.29743835, 0.41960785)
+
+[node name="PlayerStartPosition" type="Marker2D" parent="."]
+position = Vector2(93, 536)
+
+[connection signal="body_entered" from="DeathZone" to="DeathZone" method="_on_body_entered"]
