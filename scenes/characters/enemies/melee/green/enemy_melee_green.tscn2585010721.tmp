@@ -1,16 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://fyvyoiwk1pvu"]
+[gd_scene load_steps=5 format=3 uid="uid://fyvyoiwk1pvu"]
 
 [ext_resource type="Script" uid="uid://dbpvdo4ckiikl" path="res://scenes/characters/enemies/melee/green/enemy_melee_green.gd" id="1_aakxv"]
 [ext_resource type="Texture2D" uid="uid://bvkb3ghmg4sg0" path="res://assets/kenney_scribble-platformer/PNG/Default/character_squareGreen.png" id="1_oycuv"]
 [ext_resource type="PackedScene" uid="uid://dronsvhs4yumv" path="res://scenes/action/attack/sword/sword_attack.tscn" id="3_evnio"]
-[ext_resource type="Texture2D" uid="uid://y4sgahjwgcqx" path="res://assets/kenney_scribble-platformer/PNG/Default/character_handGreen.png" id="4_xhj2e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aakxv"]
 size = Vector2(37, 60)
 
 [node name="EnemyMeleeGreen" type="CharacterBody2D"]
 texture_filter = 1
-collision_mask = 17
+collision_mask = 3
 script = ExtResource("1_aakxv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -28,15 +27,6 @@ shape = SubResource("RectangleShape2D_aakxv")
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
-
-[node name="RightHand" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(35, 10)
-texture = ExtResource("4_xhj2e")
-
-[node name="LeftHand" type="Sprite2D" parent="."]
-position = Vector2(-30, 11)
-texture = ExtResource("4_xhj2e")
 
 [connection signal="hit" from="SwordAttack" to="." method="_on_sword_attack_hit"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

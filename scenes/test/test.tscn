@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://fyvyoiwk1pvu" path="res://scenes/characters/enemies/melee/green/enemy_melee_green.tscn" id="2_da6vm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_da6vm"]
+size = Vector2(19.93, 20)
 
 [node name="Test" type="Node"]
 
@@ -15,9 +16,8 @@ position = Vector2(5.4, 157.5)
 shape = SubResource("RectangleShape2D_da6vm")
 
 [node name="Player" parent="." instance=ExtResource("1_m7npr")]
+position = Vector2(486, 556)
 
-[node name="EnemyMeleeGreen" parent="." instance=ExtResource("2_da6vm")]
-position = Vector2(253, 559)
-
-[node name="EnemyMeleeGreen2" parent="." instance=ExtResource("2_da6vm")]
-position = Vector2(323, 558)
+[node name="EnemyMeleeGreen" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_da6vm")]
+position = Vector2(712, 561)
+player = NodePath("../Player")
