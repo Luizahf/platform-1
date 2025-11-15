@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://fyvyoiwk1pvu"]
+
+[ext_resource type="Script" uid="uid://dxodrivw2vegi" path="res://scenes/characters/enemies/melee/green/enemy_melee_green.gd" id="1_aakxv"]
+[ext_resource type="Texture2D" uid="uid://bvkb3ghmg4sg0" path="res://assets/kenney_scribble-platformer/PNG/Default/character_squareGreen.png" id="1_oycuv"]
+
+[node name="EnemyMeleeGreen" type="Node2D"]
+script = ExtResource("1_aakxv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_oycuv")
