@@ -11,7 +11,7 @@ height = 52.0
 script = ExtResource("1_gfjak")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="BodySprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_4kuee")
 hframes = 11
 vframes = 11
@@ -20,3 +20,15 @@ frame = 64
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_524rm")
+
+[node name="LeftHand" type="Sprite2D" parent="."]
+texture = ExtResource("2_4kuee")
+hframes = 11
+vframes = 11
+frame = 108
+
+[node name="RightHand" type="Sprite2D" parent="."]
+texture = ExtResource("2_4kuee")
+hframes = 11
+vframes = 11
+frame = 108
