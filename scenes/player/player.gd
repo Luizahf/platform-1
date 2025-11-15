@@ -10,10 +10,15 @@ const JUMP_VELOCITY = -400.0
 var jump_number: int = 0
 
 func _ready() -> void:
+	var bodyPos = $BodySprite.position
+	$LeftHand.position = Vector2(bodyPos.x + hands_distance, bodyPos.y)
+	$RightHand.position = Vector2(bodyPos.x - hands_distance, bodyPos.y)
+	$SwordAttack.position = Vector2(bodyPos.x - hands_distance, bodyPos.y)
+	
 	$SwordAttack/Area2D.set_collision_mask_value(1, false)
+	$SwordAttack/Area2D.set_collision_mask_value(6, true)
 
 func _physics_process(delta: float) -> void:
-	
 	
 	# Add the gravity.
 	if is_on_floor():
@@ -55,9 +60,7 @@ func set_hands(direction : float) -> void:
 	elif direction < 0:
 		$RightHand.position = $LeftHand.position
 		
-func set_hand_item():
-	$SwordAttack.rotation_degrees = deg_to_rad(45)
-	
+func set_hand_item():	
 	if $BodySprite.flip_h:
 		$SwordAttack.position = $RightHand.position
 	else:

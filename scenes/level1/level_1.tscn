@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://dbqlrfacg3wr6"]
+[gd_scene load_steps=10 format=4 uid="uid://dbqlrfacg3wr6"]
 
 [ext_resource type="Texture2D" uid="uid://bf5srs8u10dpo" path="res://assets/kenney_scribble-platformer/Spritesheet/spritesheet_default.png" id="1_i0tyo"]
+[ext_resource type="Script" uid="uid://ct83m77ijgkvh" path="res://scenes/level1/level_1.gd" id="1_k0kyn"]
 [ext_resource type="Script" uid="uid://c8ppb3d1ska6v" path="res://scenes/level1/death_zone.gd" id="3_jrgot"]
 [ext_resource type="Texture2D" uid="uid://bjdhuk0lslhxo" path="res://assets/kenney_scribble-platformer/Spritesheet/spritesheet_win.png" id="4_k0kyn"]
 
@@ -180,6 +181,7 @@ terrain_set_0/terrain_0/color = Color(0.14594036, 0.45752442, 0.20723304, 1)
 sources/1 = SubResource("TileSetAtlasSource_od3ps")
 
 [node name="Level 1" type="Node2D"]
+script = ExtResource("1_k0kyn")
 
 [node name="Walls" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAkAAQAFAAUAAAAAAAgAAQAFAAUAAAAAAAcAAQAFAAUAAAAAAAYAAQAFAAUAAAAAAAUAAQAFAAUAAAAAAAQAAQAFAAUAAAAAAAEAAQAFAAUAAAAAAAMAAQAFAAUAAAAAAAIAAQAFAAUAAAAAAAAAAQAFAAUAAAABAAAAAQAFAAUAAAACAAAAAQAFAAUAAAADAAAAAQAFAAUAAAAEAAAAAQAFAAUAAAAFAAAAAQAFAAUAAAAGAAAAAQAFAAUAAAAHAAAAAQAFAAUAAAAIAAAAAQAFAAUAAAAJAAAAAQAFAAUAAAAKAAAAAQAFAAUAAAALAAAAAQAFAAUAAAAMAAAAAQAFAAUAAAANAAAAAQAFAAUAAAAOAAAAAQAFAAUAAAAPAAAAAQAFAAUAAAAQAAAAAQAFAAUAAAARAAAAAQAFAAUAAAARAAEAAQAFAAUAAAARAAIAAQAFAAUAAAARAAMAAQAFAAUAAAARAAQAAQAFAAUAAAARAAUAAQAFAAUAAAARAAYAAQAFAAUAAAARAAcAAQAFAAUAAAARAAgAAQAFAAUAAAARAAkAAQAFAAUAAAABAAkAAQAEAAcAAAACAAkAAQAEAAcAAAAEAAcAAQAEAAcAAAAFAAcAAQAEAAcAAAAIAAcAAQAEAAcAAAAJAAcAAQAEAAcAAAALAAYAAQAEAAcAAAAMAAYAAQAEAAcAAAA=")
@@ -198,5 +200,11 @@ debug_color = Color(0.9550522, 0.18115309, 0.29743835, 0.41960785)
 [node name="Win" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAPAAUAAQADAAcAAAAQAAUAAQADAAcAAAA=")
 tile_set = SubResource("TileSet_h8cug")
+
+[node name="Enemy1" type="Marker2D" parent="."]
+position = Vector2(348, 420)
+
+[node name="Enemy2" type="Marker2D" parent="."]
+position = Vector2(800, 355)
 
 [connection signal="body_entered" from="DeathZone" to="DeathZone" method="_on_body_entered"]

@@ -15,9 +15,11 @@ scale = Vector2(100, 4)
 position = Vector2(5.4, 157.5)
 shape = SubResource("RectangleShape2D_da6vm")
 
-[node name="Player" parent="." instance=ExtResource("1_m7npr")]
-position = Vector2(100, 200)
-
 [node name="EnemyMeleeGreen" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_da6vm")]
 position = Vector2(712, 561)
 player = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource("1_m7npr")]
+position = Vector2(100, 200)
+collision_layer = 17
+collision_mask = 1

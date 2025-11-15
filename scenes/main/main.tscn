@@ -6,10 +6,10 @@
 
 [node name="Main" type="Node2D"]
 
+[node name="Level 1" parent="." instance=ExtResource("3_l3cfh")]
+
 [node name="Player" parent="." instance=ExtResource("1_k2fmo")]
 position = Vector2(93, 547)
 
 [node name="GameState" type="Node" parent="."]
 script = ExtResource("1_hyk8p")
-
-[node name="Level 1" parent="." instance=ExtResource("3_l3cfh")]
