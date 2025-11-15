@@ -11,12 +11,17 @@ config_version=5
 [application]
 
 config/name="platform-1"
+run/main_scene="uid://qedot0pk8glv"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
 
 window/stretch/mode="canvas_items"
+[layer_names]
+
+2d_physics/layer_1="Walls"
+2d_physics/layer_2="Death"
 
 [rendering]
 
