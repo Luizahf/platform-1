@@ -25,10 +25,6 @@ position = Vector2(35, 7)
 position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_aakxv")
 
-[node name="AttackTimer" type="Timer" parent="."]
-wait_time = 0.5
-autostart = true
-
 [node name="RightHand" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(35, 10)
@@ -37,6 +33,3 @@ texture = ExtResource("4_xhj2e")
 [node name="LeftHand" type="Sprite2D" parent="."]
 position = Vector2(-30, 11)
 texture = ExtResource("4_xhj2e")
-
-[connection signal="hit" from="SwordAttack" to="." method="_on_sword_attack_hit"]
-[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
