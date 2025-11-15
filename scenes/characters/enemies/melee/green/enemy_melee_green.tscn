@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://fyvyoiwk1pvu"]
+[gd_scene load_steps=7 format=3 uid="uid://fyvyoiwk1pvu"]
 
 [ext_resource type="Script" uid="uid://dbpvdo4ckiikl" path="res://scenes/characters/enemies/melee/green/enemy_melee_green.gd" id="1_aakxv"]
 [ext_resource type="Texture2D" uid="uid://bvkb3ghmg4sg0" path="res://assets/kenney_scribble-platformer/PNG/Default/character_squareGreen.png" id="1_oycuv"]
 [ext_resource type="PackedScene" uid="uid://dronsvhs4yumv" path="res://scenes/action/attack/sword/sword_attack.tscn" id="3_evnio"]
 [ext_resource type="Texture2D" uid="uid://y4sgahjwgcqx" path="res://assets/kenney_scribble-platformer/PNG/Default/character_handGreen.png" id="4_xhj2e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhj2e"]
+size = Vector2(0.5800009, 27.375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aakxv"]
 size = Vector2(37, 60)
@@ -16,6 +19,13 @@ script = ExtResource("1_aakxv")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_oycuv")
+
+[node name="Wall1" type="StaticBody2D" parent="Sprite2D"]
+scale = Vector2(100, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Wall1"]
+position = Vector2(1.0500002, 125.75)
+shape = SubResource("RectangleShape2D_xhj2e")
 
 [node name="SwordAttack" parent="." instance=ExtResource("3_evnio")]
 texture_filter = 1

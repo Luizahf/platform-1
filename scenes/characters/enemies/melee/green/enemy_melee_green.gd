@@ -30,11 +30,16 @@ func move(_dist: Vector2, delta: float):
 		$Sprite2D.scale.x = -1
 	set_hands(_dist.x)
 		
-func set_hands(dist_x: int) -> void:		
-	if dist_x > 0:
+func set_hands(dist_x: int) -> void:
+	var bodyPos = $Sprite2D.position
+	
+	$LeftHand.position = Vector2(bodyPos.x + hands_distance, bodyPos.y)
+	$RightHand.position = Vector2(bodyPos.x - hands_distance, bodyPos.y)
+	
+	if dist_x < 0:
 		$LeftHand.position = $RightHand.position
 		$SwordAttack.position = $RightHand.position
-	elif dist_x < 0:
+	elif dist_x > 0:
 		$RightHand.position = $LeftHand.position
 		$SwordAttack.position = $LeftHand.position
  
