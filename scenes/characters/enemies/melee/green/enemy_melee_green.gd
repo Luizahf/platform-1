@@ -8,7 +8,7 @@ const JUMP_VELOCITY = -400.0
 
 func _ready():
 	if attack.has_method("_on_atack"):
-		attack._on_atack()
+		attack._on_atack(1)
 
 func _physics_process(delta: float) -> void:
 	pass

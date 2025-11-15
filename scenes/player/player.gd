@@ -7,6 +7,8 @@ const JUMP_VELOCITY = -400.0
 
 var jump_number: int = 0
 
+func _ready() -> void:
+	$SwordAttack/Area2D.set_collision_mask_value(1, false)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -33,7 +35,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
 	set_hands(direction)
+	set_hand_item()
+	check_attack(direction)
 	
 func set_hands(direction : float) -> void:
 	var bodyPos = $BodySprite.position
@@ -46,4 +51,21 @@ func set_hands(direction : float) -> void:
 	elif direction < 0:
 		$RightHand.position = $LeftHand.position
 		
+func set_hand_item():
+	$SwordAttack.rotation_degrees = deg_to_rad(45)
 	
+	if $BodySprite.flip_h:
+		$SwordAttack.position = $RightHand.position
+	else:
+		$SwordAttack.position = $LeftHand.position
+		
+func check_attack(direction: float) -> void:
+	if Input.is_key_pressed(KEY_A):		
+		var attack_direction = -1 if $BodySprite.flip_h else 1 
+		if direction != 0:
+			attack_direction = attack_direction * -1
+		
+		$SwordAttack._on_atack(attack_direction)
+		
+func take_hit(damage: int) -> void:
+	queue_free()
