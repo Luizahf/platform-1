@@ -18,6 +18,10 @@ config/icon="res://icon.svg"
 [display]
 
 window/stretch/mode="canvas_items"
+[layer_names]
+
+2d_physics/layer_1="Walls"
+2d_physics/layer_2="Death"
 
 [rendering]
 
