@@ -1,11 +1,17 @@
-extends Node2D
+extends CharacterBody2D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
 
+@onready var attack = $SwordAttack
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _ready():
+	if attack.has_method("_on_atack"):
+		attack._on_atack()
+	move_and_slide()
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta

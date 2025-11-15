@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://qedot0pk8glv"]
+[gd_scene load_steps=4 format=3 uid="uid://qedot0pk8glv"]
 
 [ext_resource type="PackedScene" uid="uid://cmofqtb5vhlpk" path="res://scenes/player/Player.tscn" id="1_m7npr"]
+[ext_resource type="PackedScene" uid="uid://fyvyoiwk1pvu" path="res://scenes/characters/enemies/melee/green/enemy_melee_green.tscn" id="2_da6vm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_da6vm"]
 
@@ -14,3 +15,6 @@ position = Vector2(5.4, 157.5)
 shape = SubResource("RectangleShape2D_da6vm")
 
 [node name="Player" parent="." instance=ExtResource("1_m7npr")]
+
+[node name="EnemyMeleeGreen" parent="." instance=ExtResource("2_da6vm")]
+position = Vector2(227, 548)
