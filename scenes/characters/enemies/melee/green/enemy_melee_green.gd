@@ -11,7 +11,7 @@ var hands_distance : int = 30
 
 func _ready():
 	if attack.has_method("_on_atack"):
-		attack._on_atack()
+		attack._on_atack(1)
 
 func _physics_process(delta: float) -> void:
 	if player != null:

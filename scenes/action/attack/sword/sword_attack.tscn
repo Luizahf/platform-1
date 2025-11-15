@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dronsvhs4yumv"]
+[gd_scene load_steps=9 format=3 uid="uid://dronsvhs4yumv"]
 
 [ext_resource type="Script" uid="uid://bbu0ln4uiu7tl" path="res://scenes/action/attack/sword/sword_attack.gd" id="1_32i2u"]
 [ext_resource type="Texture2D" uid="uid://dg4hbqx6eab3o" path="res://assets/kenney_scribble-platformer/PNG/Default/item_sword.png" id="1_u560g"]
@@ -38,10 +38,27 @@ tracks/0/keys = {
 "values": [0.0, 0.7853982, 1.5707964, 0.7853982, 0.0]
 }
 
+[sub_resource type="Animation" id="Animation_32i2u"]
+resource_name = "attack_left"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.12545179, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -1.5707964, 0.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_54sll"]
 _data = {
 &"RESET": SubResource("Animation_rpcjb"),
-&"attack": SubResource("Animation_on6lt")
+&"attack": SubResource("Animation_on6lt"),
+&"attack_left": SubResource("Animation_32i2u")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_32i2u"]
