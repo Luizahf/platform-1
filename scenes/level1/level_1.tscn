@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://dbqlrfacg3wr6"]
+[gd_scene load_steps=9 format=4 uid="uid://dbqlrfacg3wr6"]
 
-[ext_resource type="TileSet" uid="uid://raamq5u2pw8w" path="res://tileset/game_tile_map.tres" id="1_et3ml"]
 [ext_resource type="Texture2D" uid="uid://bf5srs8u10dpo" path="res://assets/kenney_scribble-platformer/Spritesheet/spritesheet_default.png" id="1_i0tyo"]
 [ext_resource type="Script" uid="uid://c8ppb3d1ska6v" path="res://scenes/level1/death_zone.gd" id="3_jrgot"]
+[ext_resource type="Texture2D" uid="uid://bjdhuk0lslhxo" path="res://assets/kenney_scribble-platformer/Spritesheet/spritesheet_win.png" id="4_k0kyn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0kyn"]
 texture = ExtResource("1_i0tyo")
@@ -45,6 +45,9 @@ texture_region_size = Vector2i(64, 64)
 2:7/0 = 0
 3:7/0 = 0
 4:7/0 = 0
+4:7/0/terrain_set = 0
+4:7/0/terrain = 0
+4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
 5:7/0 = 0
 6:7/0 = 0
 7:7/0 = 0
@@ -85,6 +88,7 @@ texture_region_size = Vector2i(64, 64)
 5:5/0 = 0
 5:5/0/terrain_set = 0
 5:5/0/terrain = 0
+5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
 5:5/0/terrains_peering_bit/right_side = 0
 5:5/0/terrains_peering_bit/bottom_right_corner = 0
 5:5/0/terrains_peering_bit/bottom_side = 0
@@ -150,15 +154,36 @@ sources/1 = SubResource("TileSetAtlasSource_k0kyn")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h8cug"]
 size = Vector2(900.5, 57)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_od3ps"]
+texture = ExtResource("4_k0kyn")
+texture_region_size = Vector2i(64, 64)
+3:7/0 = 0
+3:7/0/terrain_set = 0
+3:7/0/terrain = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+3:7/0/terrains_peering_bit/right_side = 0
+3:7/0/terrains_peering_bit/bottom_right_corner = 0
+3:7/0/terrains_peering_bit/bottom_side = 0
+3:7/0/terrains_peering_bit/bottom_left_corner = 0
+3:7/0/terrains_peering_bit/left_side = 0
+3:7/0/terrains_peering_bit/top_left_corner = 0
+3:7/0/terrains_peering_bit/top_side = 0
+3:7/0/terrains_peering_bit/top_right_corner = 0
+
+[sub_resource type="TileSet" id="TileSet_h8cug"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 4
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Win"
+terrain_set_0/terrain_0/color = Color(0.14594036, 0.45752442, 0.20723304, 1)
+sources/1 = SubResource("TileSetAtlasSource_od3ps")
+
 [node name="Level 1" type="Node2D"]
 
 [node name="Walls" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAAAkAAQAFAAUAAAAAAAgAAQAFAAUAAAAAAAcAAQAFAAUAAAAAAAYAAQAFAAUAAAAAAAUAAQAFAAUAAAAAAAQAAQAFAAUAAAAAAAEAAQAFAAUAAAAAAAMAAQAFAAUAAAAAAAIAAQAFAAUAAAAAAAAAAQAFAAUAAAABAAAAAQAFAAUAAAACAAAAAQAFAAUAAAADAAAAAQAFAAUAAAAEAAAAAQAFAAUAAAAFAAAAAQAFAAUAAAAGAAAAAQAFAAUAAAAHAAAAAQAFAAUAAAAIAAAAAQAFAAUAAAAJAAAAAQAFAAUAAAAKAAAAAQAFAAUAAAALAAAAAQAFAAUAAAAMAAAAAQAFAAUAAAANAAAAAQAFAAUAAAAOAAAAAQAFAAUAAAAPAAAAAQAFAAUAAAAQAAAAAQAFAAUAAAARAAAAAQAFAAUAAAARAAEAAQAFAAUAAAARAAIAAQAFAAUAAAARAAMAAQAFAAUAAAARAAQAAQAFAAUAAAARAAUAAQAFAAUAAAARAAYAAQAFAAUAAAARAAcAAQAFAAUAAAARAAgAAQAFAAUAAAARAAkAAQAFAAUAAAA=")
+tile_map_data = PackedByteArray("AAAAAAkAAQAFAAUAAAAAAAgAAQAFAAUAAAAAAAcAAQAFAAUAAAAAAAYAAQAFAAUAAAAAAAUAAQAFAAUAAAAAAAQAAQAFAAUAAAAAAAEAAQAFAAUAAAAAAAMAAQAFAAUAAAAAAAIAAQAFAAUAAAAAAAAAAQAFAAUAAAABAAAAAQAFAAUAAAACAAAAAQAFAAUAAAADAAAAAQAFAAUAAAAEAAAAAQAFAAUAAAAFAAAAAQAFAAUAAAAGAAAAAQAFAAUAAAAHAAAAAQAFAAUAAAAIAAAAAQAFAAUAAAAJAAAAAQAFAAUAAAAKAAAAAQAFAAUAAAALAAAAAQAFAAUAAAAMAAAAAQAFAAUAAAANAAAAAQAFAAUAAAAOAAAAAQAFAAUAAAAPAAAAAQAFAAUAAAAQAAAAAQAFAAUAAAARAAAAAQAFAAUAAAARAAEAAQAFAAUAAAARAAIAAQAFAAUAAAARAAMAAQAFAAUAAAARAAQAAQAFAAUAAAARAAUAAQAFAAUAAAARAAYAAQAFAAUAAAARAAcAAQAFAAUAAAARAAgAAQAFAAUAAAARAAkAAQAFAAUAAAABAAkAAQAEAAcAAAACAAkAAQAEAAcAAAAEAAcAAQAEAAcAAAAFAAcAAQAEAAcAAAAIAAcAAQAEAAcAAAAJAAcAAQAEAAcAAAALAAYAAQAEAAcAAAAMAAYAAQAEAAcAAAA=")
 tile_set = SubResource("TileSet_od3ps")
-
-[node name="Floor" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAABAAkAAgAEAAcAAAACAAkAAgAEAAcAAAAQAAYAAgAEAAcAAAAPAAYAAgAEAAcAAAAGAAcAAgAEAAcAAAAHAAcAAgAEAAcAAAALAAcAAgAEAAcAAAAMAAcAAgAEAAcAAAA=")
-tile_set = ExtResource("1_et3ml")
 
 [node name="DeathZone" type="Area2D" parent="."]
 collision_layer = 2
@@ -169,5 +194,9 @@ script = ExtResource("3_jrgot")
 position = Vector2(640.75, 610.5)
 shape = SubResource("RectangleShape2D_h8cug")
 debug_color = Color(0.9550522, 0.18115309, 0.29743835, 0.41960785)
+
+[node name="Win" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAPAAUAAQADAAcAAAAQAAUAAQADAAcAAAA=")
+tile_set = SubResource("TileSet_h8cug")
 
 [connection signal="body_entered" from="DeathZone" to="DeathZone" method="_on_body_entered"]

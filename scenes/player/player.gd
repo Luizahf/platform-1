@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @export var hands_distance : int = 30
 
+signal died
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
@@ -11,6 +13,8 @@ func _ready() -> void:
 	$SwordAttack/Area2D.set_collision_mask_value(1, false)
 
 func _physics_process(delta: float) -> void:
+	
+	
 	# Add the gravity.
 	if is_on_floor():
 		jump_number = 0
@@ -69,3 +73,7 @@ func check_attack(direction: float) -> void:
 		
 func take_hit(damage: int) -> void:
 	queue_free()
+
+func die():
+	print("Player morreu!")
+	emit_signal("died")
