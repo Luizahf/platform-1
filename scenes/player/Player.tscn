@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b4hppdpjuiy40" path="res://scenes/player/player.gd" id="1_gfjak"]
 [ext_resource type="Texture2D" uid="uid://bf5srs8u10dpo" path="res://assets/kenney_scribble-platformer/Spritesheet/spritesheet_default.png" id="2_4kuee"]
-[ext_resource type="PackedScene" uid="uid://dronsvhs4yumv" path="res://scenes/action/attack/sword/sword_attack.tscn" id="3_4kuee"]
+[ext_resource type="PackedScene" uid="uid://bpaitnbxdlkxb" path="res://scenes/action/attack/sword/sword_attack.tscn" id="3_4kuee"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_524rm"]
 radius = 16.0

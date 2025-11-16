@@ -1,8 +1,10 @@
+class_name Player
 extends CharacterBody2D
 
 @export var hands_distance : int = 30
 
 signal died
+signal win
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -44,7 +46,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-	
+	_handle_collision()
 	set_hands(direction)
 	set_hand_item()
 	check_attack(direction)
@@ -76,6 +78,18 @@ func check_attack(direction: float) -> void:
 		
 func take_hit(damage: int) -> void:
 	queue_free()
+	
+func _handle_collision() -> void:
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+
+		var tilemap_layer := collision.get_collider()
+		if not (tilemap_layer is TileMapLayer):
+			continue
+			
+		if tilemap_layer.name == "Win":
+			emit_signal("win")
+		
 
 func die():
 	print("Player morreu!")
